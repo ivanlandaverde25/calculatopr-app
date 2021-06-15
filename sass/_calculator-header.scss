@@ -1,0 +1,80 @@
+.calculator-section {
+  position: relative;
+  color: $White1;
+  font-weight: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme {
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 1.4em;
+}
+
+.theme-number {
+  font-size: 11px;
+  letter-spacing: 7px;
+  margin-left: 7px;
+  margin-bottom: 1px;
+}
+
+.calculator-themes {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 140px;
+}
+
+.all-themes {
+  background: $toggle-background1;
+  border-radius: 10px;
+  min-height: 21px;
+  padding: 0 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.themes input[type="radio"] {
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  margin: 0px 2px;
+  border: 0;
+}
+
+.themes input[type="radio"]::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: $toggle-background1;
+  border-radius: 50%;
+}
+
+.themes input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: red;
+  border-radius: 50%;
+}
+
+.calculator-view {
+  position: relative;
+  background: $screen-background1;
+  color: $White1;
+  font-size: 2.8em;
+  text-align: right;
+  width: 100%;
+  min-height: 1em;
+  padding: 0.5em;
+  border-radius: 7px;
+  margin-top: 0.5em;
+  outline: none;
+  border: none;
+}

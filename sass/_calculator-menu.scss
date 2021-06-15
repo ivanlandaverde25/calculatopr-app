@@ -1,0 +1,81 @@
+@mixin btnStyle(
+  $colorBoton: #fff,
+  $color: #000,
+  $boxShadow: rgb(112, 112, 112)
+) {
+  background: $colorBoton;
+  color: $color;
+  font-family: "Spartan", sans-serif;
+  font-size: $sizeButton;
+  box-shadow: 0px 3px 0px $boxShadow;
+  user-select: none;
+}
+
+@mixin btn() {
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.calculator-menu {
+  position: relative;
+  width: 100%;
+  background: $toggle-background1;
+  padding: 1.5em 0.5em;
+  display: grid;
+  grid-template:
+    "btn7   btn8  btn9    DEL" 55px
+    "btn4   btn5  btn6    MAS" 55px
+    "btn1   btn2  btn3    MENOS" 55px
+    "PUNTO  btn0  SLASH   MULTI" 55px
+    "RESET RESET  EQUALS  EQUALS" 55px /
+    20% 20% 20% 20%;
+  justify-content: center;
+  border-radius: 7px;
+  margin-top: 1em;
+  gap: 20px;
+}
+
+.btn {
+  @include btnStyle(
+    $light-key-background1,
+    $Very-dark-grayish-blue1,
+    $grayish-key-shadow1
+  );
+  @include btn();
+}
+
+.btn:active {
+  background: $grayish-key-shadow1;
+}
+
+.btn-reset {
+  grid-area: RESET;
+  background: $desatured-key-background1;
+  box-shadow: 0px 3px 0px $desatured-key-shadow1;
+  color: $White1;
+  font-size: 18px;
+}
+
+.btn-del {
+  background: $desatured-key-background1;
+  box-shadow: 0px 3px 0px $desatured-key-shadow1;
+  color: $White1;
+  font-size: 18px;
+}
+
+.btn-del .btn-reset:active {
+  background: $desatured-key-shadow1;
+}
+
+.btn-equals {
+  grid-area: EQUALS;
+  background: $key-background-toggle1;
+  box-shadow: 0px 3px 0px $key-shadow1;
+  color: $White1;
+}
+
+.btn-equals:active {
+  background: $key-shadow1;
+}
